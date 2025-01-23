@@ -1,0 +1,75 @@
+# Date (YYYY-mm-dd) - username: summary notes on the change / update
+    # 2025-01-12 - agpldev
+    #  - removed redundant / duplicate headers section for sitemap.xml
+    #  - The catc-all headers section for = "*.xml" will handle this
+    # 2025-01-13 - agpldev
+    #  - added redirects for www and https to http
+    # 2025-01-14 - agpldev
+    #  - updated redirects to https and removed http redirects
+    #  - updated canonical to https
+    # 2025-01-15 - agpldev
+    #  - removed redirect for .preview page
+    #  - added robots.txt disallow for .preview page
+    # 2025-01-16 - agpldev
+    #  - added redirect for /api/placeholder/1200/600 to canonical url
+    # 2025-01-17 - agpldev
+    #  - updated redirects to include http to https redirects
+    # 2025-01-18 - agpldev
+    #  - removed duplicate redirects
+    # 2025-01-19 - agpldev
+    #  - removed redirect for _preview page
+    #  - updated robots.txt to disallow _preview
+    # 2025-01-20 - agpldev
+    #  - removed duplicate redirects
+    #  - updated redirects to remove splat
+    # 2025-01-21 - agpldev
+    #  - updated alt tag for image
+
+    [build]
+      command = "npm run build"
+      publish = "dist"
+
+    [[headers]]
+      for = "/*.xml"
+      [headers.values]
+        Content-Type = "application/xml"
+
+    [[redirects]]
+      from = "/*.html"
+      to = "/index.html"
+      status = 200
+
+    [[redirects]]
+      from = "http://allhourstowingmaconga.com/*"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+
+    [[redirects]]
+      from = "http://www.allhourstowingmaconga.com/*"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+
+    [[redirects]]
+      from = "https://www.allhourstowingmaconga.com/*"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+
+    [[redirects]]
+      from = "https://www.allhourstowingmaconga.com/booknow-6951-7878"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+    
+    [[redirects]]
+      from = "https://allhourstowingmaconga.com/api/placeholder/1200/600"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+
+    [[redirects]]
+      from = "https://allhourstowingmaconga.com/home-2323-3484"
+      to = "https://allhourstowingmaconga.com/"
+      status = 301
+
+    [[headers]]
+      for = "/sitemap.xml"
+      [headers.values]
+        Content-Type = "application/xml"
